@@ -23,18 +23,27 @@ body{
     font-size: 16px;
 }
 
+.content{
+    display: block;
+    flex: 1 0 auto;
+    flex-direction: column;
+    
+}
+
 .container{
     display: flex;
-    width: 980px;
     flex: 1 0 auto;
-    flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: inherit;
 }
 
 
 .box{
-    border:1px solid black;
-    height: 16px;
-    width: 16px;
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid black;
+    aspect-ratio: 1;
 }
 
 .white {background-color: white;}
