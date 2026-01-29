@@ -1,0 +1,38 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(206, 202, 202);
+    padding: 16px;
+    height: 32px;
+}
+
+.title{
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.right-button{
+    font-size: 16px;
+}
+
+.container{
+    display: flex;
+    width: 980px;
+    flex: 1 0 auto;
+    flex-flow: row wrap;
+}
+
+
+.box{
+    border:1px solid black;
+    height: 16px;
+    width: 16px;
+}
