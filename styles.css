@@ -1,11 +1,11 @@
-body{
+body {
     min-height: 100vh;
     display: flex;
     margin: 0;
     flex-direction: column;
 }
 
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,36 +14,43 @@ body{
     height: 32px;
 }
 
-.title{
+.title {
     font-size: 32px;
     font-weight: 300;
 }
 
-#redraw{
+#redraw {
     font-size: 16px;
 }
 
-.content{
+.content {
     display: block;
-    flex: 1 0 auto;
     flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 850px;
+    max-height: 250px;
+    flex: 1 0 auto;
+   
     
 }
 
-.container{
+.row {
     display: flex;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
-    height: inherit;
+    min-height: 0;
+    min-width: 0;
 }
 
 
-.box{
+.box {
     display: flex;
-    flex-grow: 1;
+    flex: 1 1 0;
     border: 1px solid black;
     aspect-ratio: 1;
+    min-height: 0;
+    min-width: 0;
 }
 
 .white {background-color: white;}
