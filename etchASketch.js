@@ -1,25 +1,30 @@
 "use strict";
 const redrawButton = document.querySelector("#redraw");
 const content = document.querySelector(".content");
+let drawCount = 1;
 
 redrawButton.addEventListener("click", () => {
     let defaultInput = 16;
-    let bool = true;
     let userInput = prompt(`Input amount of boxes per side. \nThe default is 16`);
     if (userInput === ""){
-        drawGrid(defaultInput);
+        drawCount++;
+        drawGrid(defaultInput, drawCount);
     } else if (userInput > 100){
         alert(`${userInput} by ${userInput} is too many boxes!`);
     }
-    else {drawGrid(userInput, bool);}
+    else {
+        drawCount++;
+        drawGrid(userInput, drawCount);
+
+    }
 });
 
 
 
-function drawGrid(num, bool = false){
-    let reDraw = bool
+function drawGrid(num, drawCount){
 
-    if (reDraw === true){
+
+    if (drawCount > 1){
         let rowList = document.querySelectorAll(`.row`);
         for(let i = 0; i < rowList.length; i++){
             let rowRemove = rowList[i]
@@ -37,6 +42,8 @@ function drawGrid(num, bool = false){
 
         let currentRow = document.querySelector(`#row${i}`);
         let rowList = document.querySelectorAll('.row');
+        // currentRow.addEventListener('mouseenter', boxEnter(Event))
+        // currentRow.addEventListener('mouseleave', boxEnter(Event))
         content.appendChild(currentRow);
 
         console.log(rowList);
@@ -52,6 +59,13 @@ function drawGrid(num, bool = false){
         for(let j = 0; j < num; j++){
             let box = document.createElement("div");
             box.classList.add("box");
+            box.addEventListener("mouseenter", (event) =>{
+                box.classList.add("black")
+            })
+            box.addEventListener("mouseleave", (event) =>{
+                box.classList.add("white")
+                
+            })
             currentRow.appendChild(box);
         }
         content.appendChild(currentRow);
@@ -60,44 +74,24 @@ function drawGrid(num, bool = false){
     }
 };
 
+// function boxLeave(){
+//     const target = Event.target.getAttribute("class");
+//     console.log(target);
+// }
+
+// function boxEnter(){
+//     const target = Event.target.getAttribute("class");
+//     console.log(target);
+// }
 
 
 
 
+// row.addEventListener("mouseenter", () => {
+//     alert(`You entered`);
 
+// });
 
-
-
-
-
-// function drawGrid(num, reDrawBool = false){
-//     reDraw = reDrawBool
-
-//     if (redraw === true){
-//         row.removeChild(box)
-//         content.removeChild(row)
-//     }
-        
-//     for(let i = 0; i < num; i++){
-//         let row = document.createElement("div");
-//         row.classList.add("row");
-//         row.id = `row${i}`;
-//         content.appendChild(row);
-
-//         let currentRow = document.querySelector(`#row${i}`);
-//         // content.appendChild(currentRow);
-
-//         for(let j = 0; j < num; j++){
-//             let box = document.createElement("div");
-//             box.classList.add("box");
-//             currentRow.appendChild(box);
-//         }
-//         content.appendChild(currentRow);
-        
-        
-//     }
-
-// };
 
 
 const rowCount = document.querySelectorAll(".row");
@@ -115,11 +109,6 @@ window.onload = function() {
 };
 
 
-
-// row.addEventListener("mouseenter", () => {
-//     alert(`You entered`);
-
-// });
 
 
    
