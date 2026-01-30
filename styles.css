@@ -47,7 +47,6 @@ body {
 .box {
     display: flex;
     flex: 1 1 0;
-    border: 1px solid black;
     aspect-ratio: 1;
     min-height: 0;
     min-width: 0;
