@@ -25,10 +25,7 @@ body {
 
 .content {
     display: block;
-    flex-direction: column;
-    flex-wrap: wrap;
     max-width: 850px;
-    max-height: 250px;
     flex: 1 0 auto;
    
     
@@ -36,7 +33,7 @@ body {
 
 .row {
     display: flex;
-    flex: 1 1 auto;
+    flex: 1 1 0;
     flex-direction: row;
     flex-wrap: wrap;
     min-height: 0;
@@ -47,6 +44,7 @@ body {
 .box {
     display: flex;
     flex: 1 1 0;
+    border: 1px solid black;
     aspect-ratio: 1;
     min-height: 0;
     min-width: 0;
